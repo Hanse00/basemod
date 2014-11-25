@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "basemod",
+    "name": "BaseMod",
+    "description": "A base mod which includes all the files needed to create a new Minecraft Forge mod.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["Hanse00"],
+    "credits": "The current and past Minecraft Forge team for developing the API this mod is built for.",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

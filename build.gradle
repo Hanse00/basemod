@@ -1,0 +1,72 @@
+buildscript {
+	repositories {
+		mavenCentral()
+		maven {
+			name = "forge"
+			url = "http://files.minecraftforge.net/maven"
+		}
+
+		maven {
+			name = "sonatype"
+			url = "https://oss.sonatype.org/content/repositories/snapshots/"
+		}
+	}
+
+	dependencies {
+		// Version of ForgeGradle to use for this project.
+	
+		classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+	}
+}
+
+apply plugin: 'forge'
+
+// Defines the version to display as part of your jar file name, and in the ingame mod info.
+// Naming convention is up to you I personally recommend <minecraft version>-<mod version> as per Semantic versioning (see http://semver.org/).
+// Eg. 1.7.10-1.0
+
+version = "1.7.10-1.0"
+
+// The group name used in the mod, also used to determine which package to look for the mod in.
+// Consult http://maven.apache.org/guides/mini/guide-naming-conventions.html for convention, normally tld.domain.project
+// Eg. dk.philiphansen.basemod - That is the project "basemod" under the domain philiphansen.dk
+
+group = "dk.philiphansen.basemod"
+
+// The base name of the jar file, that is the name without the version appended.
+// Eg. basemod - Will result in "basemod-version.number.jar" when the file is generated.
+
+archivesBaseName = "basemod"
+
+minecraft {
+	
+	// The version of minecraft + forge to build and run the mod against.
+	// Eg. 1.7.10-10.13.2.1236 for Minecraft version 1.7.10, with Minecraft Forge version 10.13.2.1236 
+	
+	version = "1.7.10-10.13.2.1236"
+	
+	// The directory in which to generate the Minecraft files, when the game is run from within your IDE.
+	
+	runDir = "run"
+	
+	// Replace all string instances of "${version}" in the Java source code, allowing you to automatically set the
+	// version number in the Mod annotation.
+
+	replace '${version}', project.version
+}
+
+processResources {
+	// Replace ${version} and ${mcversion} strings in the mcmod.info file, with the relevant version numbers set in this file.
+
+	inputs.property "version", project.version
+	inputs.property "mcversion", project.minecraft.version
+
+	from(sourceSets.main.resources.srcDirs) {
+		include 'mcmod.info'
+		expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+		exclude 'mcmod.info'
+	}
+}
