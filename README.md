@@ -11,7 +11,7 @@ The use of ForgeGradle requires the [Java Development Kit](http://www.oracle.com
 Using BaseMod to set up your own ForgeGradle project, is done in the following steps
 
 1. [Copy](https://github.com/Hanse00/basemod#copy)
-1. [Edit build.gradle](https://github.com/Hanse00/basemodr#buildgradle)
+1. [Edit build.gradle](https://github.com/Hanse00/basemod#buildgradle)
 1. [Generate project](https://github.com/Hanse00/basemod#generate-project)
 1. [Code](https://github.com/Hanse00/basemod#code)
 1. [Build](https://github.com/Hanse00/basemod#build)
