@@ -99,7 +99,11 @@ To build the mod, run the command:
 gradlew build
 ```
 
-This will place the compiled jar file inside the `<project directory>/build/libs` directory.
+This will place the compiled jar files inside the `<project directory>/build/libs` directory.
+
+The `-sources.jar` file contains the source code for the mod.
+The `-deobf.jar` file contains the deobfuscated code which is useful to other developers.
+The `.jar` file without a specifier is the file that should be installed by others.
 
 If this is not the first time you are building the mod, or you experience that any files are not correctly updated, you may want to run the clean command, such as:
 
