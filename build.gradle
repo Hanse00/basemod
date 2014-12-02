@@ -15,11 +15,11 @@ buildscript {
     dependencies {
         // Version of ForgeGradle to use for this project.
 
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath "net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT"
     }
 }
 
-apply plugin: 'forge'
+apply plugin: "forge"
 
 // Defines the version to display as part of your jar file name, and in the ingame mod info.
 // Naming convention is up to you I personally recommend <minecraft version>-<mod version> as per Semantic versioning (see http://semver.org/).
@@ -64,11 +64,11 @@ processResources {
     inputs.property "mcversion", project.minecraft.version
 
     from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        include "mcmod.info"
+        expand "version":project.version, "mcversion":project.minecraft.version
     }
 
     from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+        exclude "mcmod.info"
     }
 }
