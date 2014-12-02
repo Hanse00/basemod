@@ -10,11 +10,12 @@ The use of ForgeGradle requires the [Java Development Kit](http://www.oracle.com
 
 Using BaseMod to set up your own ForgeGradle project, is done in the following steps
 
-1. [Copy](https://github.com/Hanse00/basemod#copy)
-1. [Edit build.gradle](https://github.com/Hanse00/basemod#buildgradle)
-1. [Generate project](https://github.com/Hanse00/basemod#generate-project)
-1. [Code](https://github.com/Hanse00/basemod#code)
-1. [Build](https://github.com/Hanse00/basemod#build)
+1. [Copy](#copy)
+2. [Edit build.gradle](#buildgradle)
+3. [Edit gradle.properties](#gradleproperties)
+4. [Generate project](#generate-project)
+5. [Code](#code)
+6. [Build](#build)
 
 ## Steps
 ### Copy
@@ -27,17 +28,31 @@ You can then download, and use this repository as your working directory.
 * Click `Download ZIP` in the right side of the repository page, to download a zipped version of this repository.  
 This can then be unzipped to a working directory, and be used as the base for your mod.
 
-### Build.gradle
+### build.gradle
+
+This file contains the configuration for gradle to build and package the mod to a jar file.
+The whole file is written in groovy, a programming lanaguage, so practically anything is possible in this file.
+
+First read the build.gradle and try to understand it. If you cannot, don't worry: all of the hard work is done for you.
 
 Edit the build.gradle file to fit the needs for your mod.
-
-In most cases this only requires the change of the `version`, `group`, `archivesBaseName`, and possibly `minecraft version` variables.
+In most cases this only requires the change of the `group` and  `archivesBaseName` variables.
 
 For more specialized mods, you may need to refer to ForgeGradle documentation.
+
+### gradle.properties
+
+This file sets out some variables which are accessible in the `build.gradle` script such as `mcversion` and `mcversion`.
+The reason they are stored in this file is because they tend to change much more often than the other items in `build.gradle`.
+
+You should edit these variables to fit the needs of your mod.
 
 ### Generate project
 
 #### Generate workspace
+
+**Note:** You can run the following commands without the `w` at the end if you already have gradle installed.  
+Add `./` to the front of the command on OSX and *NIX systems. For example: `./gradlew` instead of `gradlew`
 
 To generate the Forge workspace which is used to code in, you will need to run one of the following commands:
 
@@ -71,8 +86,6 @@ These commands can be run at once, such as:
 gradlew setupDecompWorkspace idea
 ```
 
-**Note:** You can run the commands without the `w` at the end if you already have gradle installed.  
-Add `./` to the front of the command on OSX and *NIX systems.
 
 ### Code
 

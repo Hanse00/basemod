@@ -1,3 +1,5 @@
+// The properties in gradle.properties are automcatically loaded.
+
 buildscript {
     repositories {
         mavenCentral()
