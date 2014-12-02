@@ -24,8 +24,9 @@ apply plugin: 'forge'
 // Defines the version to display as part of your jar file name, and in the ingame mod info.
 // Naming convention is up to you I personally recommend <minecraft version>-<mod version> as per Semantic versioning (see http://semver.org/).
 // Eg. 1.7.10-1.0
+// The example here is using the mcversion and modversion set in gradle.properties
 
-version = "1.7.10-1.0"
+version = "$mcversion-$modversion"
 
 // The group name used in the mod, also used to determine which package to look for the mod in.
 // Consult http://maven.apache.org/guides/mini/guide-naming-conventions.html for convention, normally tld.domain.project
@@ -41,10 +42,12 @@ archivesBaseName = "basemod"
 minecraft {
 	
 	// The version of minecraft + forge to build and run the mod against.
-	// Eg. 1.7.10-10.13.2.1236 for Minecraft version 1.7.10, with Minecraft Forge version 10.13.2.1236 
 	
-	version = "1.7.10-10.13.2.1236"
 	
+	// Eg. 1.7.10-10.13.2.1236 for Minecraft version 1.7.10, with Minecraft Forge version 10.13.2.1236
+	// The example here loads the minecraft version and forge version from gradle.properties
+
+	version = "$mcversion-$forgeversion"
 	// The directory in which to generate the Minecraft files, when the game is run from within your IDE.
 	
 	runDir = "run"
