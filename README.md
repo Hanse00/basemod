@@ -16,6 +16,7 @@ Using BaseMod to set up your own ForgeGradle project, is done in the following s
 4. [Generate project](#generate-project)
 5. [Code](#code)
 6. [Build](#build)
+7. [Running Minecraft](#running-minecraft)
 
 ## Steps
 ### Copy
@@ -115,4 +116,20 @@ This can also be chained as:
 
 ```
 gradlew clean build
+```
+
+### Running Minecraft
+
+If you want to run minecraft to test the mod, you can use either the run commands in your IDE (reccomended) or use gradle.
+
+To run the client using gradle:
+
+```
+gradlew runClient
+```
+
+To run the server using gradle:
+
+```
+gradlew runServer
 ```
